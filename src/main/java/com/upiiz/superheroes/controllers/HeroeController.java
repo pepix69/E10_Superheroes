@@ -22,7 +22,7 @@ public class HeroeController {
 
     // Get one
     @GetMapping("/{id}")
-    public ResponseEntity<Heroe> getHeroeById(@RequestParam Long id){
+    public ResponseEntity<Heroe> getHeroeById(@PathVariable Long id){
         return ResponseEntity.ok(heroeService.getHeroeById(id));
     }
 
@@ -40,7 +40,7 @@ public class HeroeController {
 
     // Delete
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteHeroe(@RequestParam Long id){
+    public ResponseEntity<Void> deleteHeroe(@PathVariable Long id){
         heroeService.deleteHeroe(id);
         return ResponseEntity.noContent().build();
     }
